@@ -1,3 +1,5 @@
+import java.io.*
+import kotlin.collections.*
 fun main()  {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val num = br.readLine().toInt()
