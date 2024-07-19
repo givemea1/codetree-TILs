@@ -44,8 +44,8 @@ coms.forEach(com => {
             break;
         case 4:
             let newNode = new Node(com[1]);
-            connect(cur, newNode);
             connect(newNode, cur.next);
+            connect(cur, newNode);       
     }
     print(cur);
 })
