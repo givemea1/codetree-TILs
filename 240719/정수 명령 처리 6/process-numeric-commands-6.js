@@ -47,6 +47,8 @@ class MaxHeap {
                 maxIdx = r;
             }
 
+            this.swap(maxIdx, i);
+
             i = maxIdx;
             l = i * 2 + 1;
             r = i * 2 + 2;
