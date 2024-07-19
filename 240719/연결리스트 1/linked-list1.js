@@ -9,8 +9,6 @@ class Node {
 class DLL {
     constructor(str) {
         let node = new Node(str);
-        this.head = node;
-        this.tail = node;
         this.cur = node;
         this.size = 1;
     }
@@ -19,7 +17,6 @@ class DLL {
         if (this.cur.prev === null) {
             node.next = this.cur;
             this.cur.prev = node;
-            this.head = node;
         } else {
             node.prev = this.cur.prev;
             this.cur.prev.next = node;
@@ -32,7 +29,6 @@ class DLL {
         if (this.cur.next === null) {
             node.prev = this.cur;
             this.cur.next = node;
-            this.tail = node;
         } else {
             node.next = this.cur.next;
             node.prev = this.cur;
@@ -42,11 +38,11 @@ class DLL {
     }
 
     moveFront() {
-        this.cur = this.cur.prev;
+        if (this.cur.prev) this.cur = this.cur.prev;
     }
 
     moveBack() {
-        this.cur = this.cur.next;
+        if (this.cur.next) this.cur = this.cur.next;
     }
 
     print() {
