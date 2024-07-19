@@ -3,7 +3,7 @@ import java.util.*
 
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
-    val priorityQueue = PriorityQueue<Int>()
+    val priorityQueue = PriorityQueue<Int>(Collections.reverseOrder())
     val num =
         br
             .readLine()
