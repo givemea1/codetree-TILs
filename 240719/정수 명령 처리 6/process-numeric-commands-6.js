@@ -41,7 +41,7 @@ class MaxHeap {
         let r = i * 2 + 2;
 
         while (this.heap[l] && this.heap[l] > this.heap[i]
-        || this.heap[r] && this.heap[r] > this.heap[r]) {
+        || this.heap[r] && this.heap[r] > this.heap[i]) {
             let maxIdx = l;
             if (this.heap[r] && this.heap[r] > this.heap[l]) {
                 maxIdx = r;
