@@ -12,8 +12,8 @@ fun main() {
         val now = br.readLine().trim().split(" ")
         when (now[0]) {
             "1" -> {
-                list.addFirst(now[1])
                 cur++
+                list.add(cur-1, now[1])
                 printResult(cur)
             }
             "2" -> {
