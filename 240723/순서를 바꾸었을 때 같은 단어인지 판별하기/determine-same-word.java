@@ -7,6 +7,11 @@ public class Main {
         String s1 = sc.next();
         String s2 = sc.next();
 
+        if(s1.length() != s2.length()){
+            System.out.println("No");
+            return;
+        }
+
         char[] arr1 = s1.toCharArray();
         char[] arr2 = s2.toCharArray();
 
