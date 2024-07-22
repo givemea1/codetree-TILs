@@ -17,7 +17,7 @@ public class Main {
 
     public static int f(int n){
         if(n==1){
-            return gc(arr[n], arr[n-1]);
+            return gc(arr[n-1], arr[n-1]);
         }
         return gc(arr[n-1], f(n-1));
     }
