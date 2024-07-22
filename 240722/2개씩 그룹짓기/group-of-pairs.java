@@ -22,7 +22,7 @@ public class Main {
 
         Arrays.sort(sum_arr);
 
-        System.out.println(sum_arr[0]);    
+        System.out.println(sum_arr[1]);    
         
     }
 }
