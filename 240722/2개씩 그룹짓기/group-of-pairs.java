@@ -6,7 +6,7 @@ public class Main {
 
         int n = sc.nextInt();
 
-        Integer[] arr = new Integer[n];
+        Integer[] arr = new Integer[n*2];
 
         for(int i = 0 ; i < arr.length ; i++){
             arr[i] = sc.nextInt();
@@ -14,7 +14,6 @@ public class Main {
 
         Arrays.sort(arr);
 
-
-        System.out.println(arr[1] + arr[arr.length-2]);
+        System.out.println(arr[arr.length/2 + 2] + arr[0]);
     }
 }
