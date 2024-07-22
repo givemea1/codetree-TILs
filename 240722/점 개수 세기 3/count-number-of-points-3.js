@@ -5,16 +5,22 @@ const points = input[1].trim().split(" ").map(Number);
 const sections = input.slice(2).map(i => i.trim().split(" ").map(Number));
 
 const BS = (points, val) => {
-    let i = Math.floor(points.length / 2);
+    let left = 0, right = points.length - 1;
 
-    while (true) {
-        if (points[i] === val) break;
-        if (val < points[i]) i = Math.floor(i / 2);
-        else i += Math.ceil(i / 2);
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+
+        if (points[mid] === val) {
+            return mid;
+        } else if (points[mid] < val) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
     }
 
-    return i;
-}
+    return left;
+};
 
 sections.forEach(s => {
     console.log(BS(points, s[1]) - BS(points, s[0]) + 1);
