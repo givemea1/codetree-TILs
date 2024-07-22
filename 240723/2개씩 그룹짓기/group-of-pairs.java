@@ -12,11 +12,15 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-        Arrays.sort(arr);
-        if(n==1){
-            System.out.println(arr[0]+arr[1]);        
-        }else{
-            System.out.println(arr[1]+arr[arr.length-2]);    
+        Arrays.sort(arr, 0 , 2*n);
+
+        int max = 0;
+        for(int i = 0 ; i < arr.length; i++){
+            int groupSum = arr[i] + arr[arr.length-1 -i];
+            if(groupSum > max){
+                max = groupSum;
+            }
         }
+        System.out.println(max);
     }
 }
