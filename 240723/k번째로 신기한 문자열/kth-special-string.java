@@ -19,7 +19,11 @@ public class Main {
                 count++;
             }
         }
-        Arrays.sort(arr,0,count+1);
+
+        for(int i = 0 ; i < arr.length; i++){
+            System.out.println(arr[i]);
+        }
+        Arrays.sort(arr,0,count);
 
         System.out.println(arr[k-1]);
     }
