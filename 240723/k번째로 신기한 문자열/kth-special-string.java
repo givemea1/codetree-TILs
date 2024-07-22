@@ -14,7 +14,7 @@ public class Main {
 
         for(int i = 0; i<n;i++){
             String str = sc.next();
-            if(str.contains(word) && str.length() >= word.length()){
+            if(str.startsWith(word) && str.length() >= word.length()){
                 arr[count] = str;
                 count++;
             }
@@ -22,6 +22,8 @@ public class Main {
 
 
         Arrays.sort(arr,0,count);
+
+
 
         System.out.println(arr[k-1]);
     }
