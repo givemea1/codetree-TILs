@@ -14,6 +14,15 @@ public class Main {
 
         Arrays.sort(arr);
 
-        System.out.println(arr[arr.length/2 + 2] + arr[0]);
+        Integer[] sum_arr = new Integer[n];
+
+        for(int i = 0 ; i < sum_arr.length; i++){
+            sum_arr[i] = arr[i] + arr[arr.length-1 -i];
+        }
+
+        Arrays.sort(sum_arr);
+
+        System.out.println(sum_arr[0]);    
+        
     }
 }
