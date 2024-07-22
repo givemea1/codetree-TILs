@@ -1,5 +1,4 @@
 import java.io.*
-import java.util.*
 
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
@@ -9,19 +8,19 @@ fun main() {
             .trim()
             .split(" ")
             .map { it.toInt() }
-    var treeSet = TreeSet<Int>()
+    var a = 0
     var hashMap = HashMap<Int, Int>()
-    treeSet.addAll(
+    val arr =
         br
             .readLine()
             .trim()
             .split(" ")
             .map { it.toInt() }
-    )
-    for (i in treeSet.indices) {
-        hashMap.put(i, treeSet.first())
-        treeSet.remove(treeSet.first())
-    }
+            .sorted()
+            .map {
+                hashMap.put(a, it)
+                a += 1
+            }
     for (i in 0 until nums[1]) {
         var start = -1
         var end = -1
