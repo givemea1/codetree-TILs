@@ -19,6 +19,8 @@ public class Main {
                 count++;
             }
         }
+
+
         Arrays.sort(arr,0,count);
 
         System.out.println(arr[k-1]);
