@@ -14,7 +14,7 @@ public class Main {
 
         for(int i = 0; i<n;i++){
             String str = sc.next();
-            if(str.contains(word) && str.length() > word.length()){
+            if(str.contains(word) && str.length() >= word.length()){
                 arr[count] = str;
                 count++;
             }
