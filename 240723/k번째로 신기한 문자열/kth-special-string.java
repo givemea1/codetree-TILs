@@ -19,7 +19,7 @@ public class Main {
                 count++;
             }
         }
-        Arrays.sort(arr,0,count);
+        Arrays.sort(arr,0,count+1);
 
         System.out.println(arr[k-1]);
     }
