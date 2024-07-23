@@ -16,6 +16,11 @@ public class Main {
 
         int count = 0;
 
+        if((d1 < d2) || (d1==d2 && t1<t2) || (d1==d2 && t1==t2 && m1<m2) ){
+            System.out.println(-1);
+            return ;
+        }
+
         while(true){
             if(d1 == d2 && t1 == t2 && m1==m2){
                 break;
