@@ -13,31 +13,25 @@ public class Main {
         int t2 = sc.nextInt();
         int m2 = sc.nextInt();
 
-        long count = 0;
+
+        int count = 0;
 
         while(true){
             if(d1 == d2 && t1 == t2 && m1==m2){
                 break;
-            }else if(d1 != d2){
-                count += 1440;
-                d1++;
-            }else if( d1 == d2 && t1 != t2 ){
-                count += 60;
+            }
+
+            count++;
+            if(m1 == 60){
+                t1++;
+                m1 = 1;
                 if(t1 == 24){
                     d1++;
                     t1 = 0;
-                    continue;
                 }
-                t1++;
-            }else{
-                count++;
-                if(m1 == 60){
-                    t1++;
-                    m1 = 1;
-                    continue;
-                }
-                m1++;
+                continue;
             }
+            m1++;
         }
         System.out.println(count);
     }
