@@ -1,4 +1,5 @@
 import java.io.*
+import kotlin.math.*
 
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
@@ -10,46 +11,33 @@ fun main() {
     for (i in 0 until num) {
         arr[i] = br.readLine()
     }
-    var sLArr = IntArray(num + 1)
-    var sRArr = IntArray(num + 1)
-    var hLArr = IntArray(num + 1)
-    var hRArr = IntArray(num + 1)
-    var max = -1
-    for (i in 1..num) {
-        when (arr[i - 1]) {
-            "P" -> {
-                hLArr[i] = hLArr[i - 1]
-                sLArr[i] = sLArr[i - 1] + 1
+    val hSP = arrayOf("H", "S", "P")
+    var lArr = IntArray(num)
+    var count = 0
+    for (i in 0 until 3) {
+        for (j in arr.indices) {
+            if (arr[j].equals(hSP[i])) {
+                count++
             }
-            "S" -> {
-                hLArr[i] = hLArr[i - 1] + 1
-                sLArr[i] = sLArr[i - 1]
-            }
-            "H" -> {
-                sLArr[i] = sLArr[i - 1]
-                hLArr[i] = hRArr[i - 1]
-            }
+            lArr[i] = max(lArr[i], count)
         }
+        count = 0
     }
 
-    for (i in num downTo 1) {
-        if (i != num) {
-            sRArr[i] = sRArr[i + 1]
-            hRArr[i] = hRArr[i + 1]
-        }
-        when (arr[i - 1]) {
-            "P" -> {
-                sRArr[i]++
+    var rArr = IntArray(num)
+    for (i in 0 until 3) {
+        for (j in num - 1 downTo 0) {
+            if (arr[j].equals(hSP[i])) {
+                count++
             }
-            "S" -> {
-                hRArr[i]++
-            }
+            rArr[j] = max(rArr[i], count)
         }
+        count = 0
     }
-    for (i in 0 until num) {
-        max = Math.max(max, sLArr[i] + hRArr[num - (num - i - 1)])
-        max = Math.max(max, hLArr[i] + sRArr[num - (num - i - 1)])
+    var maxWin = -1
+    for (i in 0 until num - 1) {
+        maxWin = max(maxWin, lArr[i] + rArr[i + 1])
     }
 
-    println(max)
+    println(maxWin)
 }
