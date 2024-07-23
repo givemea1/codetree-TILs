@@ -41,21 +41,21 @@ public class Main {
     }
 
     public static int changeDay(String word){
-        if(word.equals("Mon")){
+        if(word.equals("Tue")){
             return 1;
-        }else if(word.equals("Tue")){
+        }else if(word.equals("Wed")){
             return 2;
         }
-        else if(word.equals("Wed")){
+        else if(word.equals("Thu")){
             return 3;
         }
-        else if(word.equals("Thu")){
+        else if(word.equals("Fri")){
             return 4;
         }
-        else if(word.equals("Fri")){
+        else if(word.equals("Sat")){
             return 5;
         }
-        else if(word.equals("Sat")){
+        else if(word.equals("Sun")){
             return 6;
         }
         else{
