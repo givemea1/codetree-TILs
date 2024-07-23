@@ -12,6 +12,8 @@ public class Main {
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
 
+        String word = sc.next();
+
         int count = 0;
         while(true){
             if(d1 == d2 && m1 == m2){
@@ -26,7 +28,25 @@ public class Main {
             }
             d1++;
         }
+        if(word.equals("Tue")){
+            count+=1;
 
-        System.out.println(count / 7 + 1);
+        }else if(word.equals("Wed")){
+            count+=2;
+        }
+        else if(word.equals("Thu")){
+            count+=3;
+        }
+        else if(word.equals("Fri")){
+            count+=4;
+        }
+        else if(word.equals("Sat")){
+            count+=5;
+        }
+        else if(word.equals("Sun")){
+            count+=6;
+        }
+
+        System.out.println(count / 7);
     }
 }
