@@ -36,12 +36,8 @@ public class Main {
         if(remain < dayNum){
             System.out.println(count/7);
         }else{
-            System.out.println((count) / 7 +1);
+            System.out.println(count / 7 +1);
         }
-
-        
-
-        
     }
 
     public static int changeDay(String word){
@@ -59,7 +55,7 @@ public class Main {
         else if(word.equals("Fri")){
             return 5;
         }
-        else if(word.equals("Wen")){
+        else if(word.equals("Sat")){
             return 6;
         }
         else{
