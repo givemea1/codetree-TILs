@@ -34,8 +34,8 @@ fun main() {
                 .map { it.toInt() }
                 .toIntArray()
         for (i in treeSet) {
-            if (square[0] <= i[0] && square[2] >= i[0]) {
-                if (square[1] <= i[1] && square[3] >= i[1]) {
+            if (square[2] >= i[0]) {
+                if (square[0] <= i[0]&&square[1] <= i[1] && square[3] >= i[1]) {
                     count++
                 }
             } else {
