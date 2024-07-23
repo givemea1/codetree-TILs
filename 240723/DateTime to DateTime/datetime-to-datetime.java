@@ -13,7 +13,7 @@ public class Main {
         int t2 = sc.nextInt();
         int m2 = sc.nextInt();
 
-        int count = 0;
+        long count = 0;
 
         while(true){
             if(d1 == d2 && t1 == t2 && m1==m2){
