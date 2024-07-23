@@ -29,24 +29,24 @@ public class Main {
             d1++;
         }
         if(word.equals("Tue")){
-            count+=1;
+            count-=1;
 
         }else if(word.equals("Wed")){
-            count+=2;
+            count-=2;
         }
         else if(word.equals("Thu")){
-            count+=3;
+            count-=3;
         }
         else if(word.equals("Fri")){
-            count+=4;
+            count-=4;
         }
         else if(word.equals("Sat")){
-            count+=5;
+            count-=5;
         }
         else if(word.equals("Sun")){
-            count+=6;
+            count-=6;
         }
 
-        System.out.println(count / 7);
+        System.out.println(count / 7 + 1);
     }
 }
