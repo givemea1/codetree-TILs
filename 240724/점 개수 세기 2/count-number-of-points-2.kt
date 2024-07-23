@@ -1,4 +1,5 @@
 import java.io.*
+import java.util.*
 
 var count = 0
 
@@ -10,19 +11,17 @@ fun main() {
             .trim()
             .split(" ")
             .map { it.toInt() }
-    var arr = Array(nums[0]) { IntArray(2) { 0 } }
+    val treeSet =
+        TreeSet<IntArray> { a, b -> a[0].compareTo(b[0]) }
     for (i in 0 until nums[0]) {
-        arr[i] =
+        treeSet.add(
             br
                 .readLine()
                 .trim()
                 .split(" ")
                 .map { it.toInt() }
                 .toIntArray()
-    }
-    val hashMap = HashMap<Int, IntArray>()
-    for (i in 0 until nums[0]) {
-        hashMap.put(i + 1, arr[i])
+        )
     }
 
     for (i in 0 until nums[1]) {
@@ -34,9 +33,13 @@ fun main() {
                 .split(" ")
                 .map { it.toInt() }
                 .toIntArray()
-        for (i in hashMap) {
-            if (square[0] <= i.value[0] && square[2] >= i.value[0] && square[1] <= i.value[1] && square[3] >= i.value[1]) {
-                count++
+        for (i in treeSet) {
+            if (square[0] <= i[0] && square[2] >= i[0]) {
+                if (square[1] <= i[1] && square[3] >= i[1]) {
+                    count++
+                }
+            } else {
+                break
             }
         }
         println(count)
