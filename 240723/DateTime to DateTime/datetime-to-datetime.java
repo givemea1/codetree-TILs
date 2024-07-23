@@ -17,7 +17,7 @@ public class Main {
         int count = 0;
 
         while(true){
-            if(d1 == d2 && t1 == t2 && m1==m2-1){
+            if(d1 == d2 && t1 == t2 && m1==m2){
                 break;
             }
 
@@ -25,14 +25,14 @@ public class Main {
             if(m1 == 60){
                 t1++;
                 m1 = 1;
+                if(t1 == 24){
+                    d1++;
+                    t1 = 0;
+                }
                 continue;
             }
 
-            if(t1 == 24){
-                d1++;
-                t1 = 0;
-                continue;
-            }
+            
 
             m1++;
         }
