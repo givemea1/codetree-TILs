@@ -19,7 +19,7 @@ fun main() {
             if (arr[j].equals(hSP[i])) {
                 count++
             }
-            lArr[i] = max(lArr[i], count)
+            lArr[j] = max(lArr[j], count)
         }
         count = 0
     }
@@ -30,7 +30,7 @@ fun main() {
             if (arr[j].equals(hSP[i])) {
                 count++
             }
-            rArr[j] = max(rArr[i], count)
+            rArr[j] = max(rArr[j], count)
         }
         count = 0
     }
