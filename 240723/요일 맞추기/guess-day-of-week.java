@@ -32,6 +32,7 @@ public class Main {
                 if(d1 == days[m1]){
                     m1++;
                     d1 = 1;
+                    continue;
                 }
                 d1++;
             }
