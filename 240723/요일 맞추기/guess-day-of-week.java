@@ -89,7 +89,7 @@ public class Main {
                 System.out.println("Thu");
             }
             else if(count % 7 == 5){
-                System.out.println("Wen");
+                System.out.println("Wed");
             }else{
                 System.out.println("Tue");
             }
