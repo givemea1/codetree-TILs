@@ -28,25 +28,42 @@ public class Main {
             }
             d1++;
         }
-        if(word.equals("Tue")){
-            count-=1;
 
-        }else if(word.equals("Wed")){
-            count-=2;
+        int remain = count % 7;
+        
+        int dayNum = changeDay(word);
+
+        if(remain > dayNum){
+            System.out.println(count/7);
+        }else{
+            System.out.println((count) / 7 +1);
+        }
+
+        
+
+        
+    }
+
+    public static int changeDay(String word){
+        if(word.equals("Mon")){
+            return 0;
+        }else if(word.equals("Tue")){
+            return 1;
+        }
+        else if(word.equals("Wed")){
+            return 2;
         }
         else if(word.equals("Thu")){
-            count-=3;
+            return 3;
         }
         else if(word.equals("Fri")){
-            count-=4;
+            return 4;
         }
-        else if(word.equals("Sat")){
-            count-=5;
+        else if(word.equals("Wen")){
+            return 5;
         }
-        else if(word.equals("Sun")){
-            count-=6;
+        else{
+            return 6;
         }
-
-        System.out.println((count) / 7 +1);
     }
 }
