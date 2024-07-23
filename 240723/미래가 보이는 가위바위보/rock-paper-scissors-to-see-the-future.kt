@@ -32,12 +32,12 @@ fun main() {
         }
     }
 
-    for (i in num - 1 downTo 0) {
+    for (i in num downTo 1) {
         if (i != num) {
             sRArr[i] = sRArr[i + 1]
             hRArr[i] = hRArr[i + 1]
         }
-        when (arr[i]) {
+        when (arr[i - 1]) {
             "P" -> {
                 sRArr[i]++
             }
@@ -47,8 +47,8 @@ fun main() {
         }
     }
     for (i in 0 until num) {
-        max = Math.max(max, sLArr[i] + hRArr[num - (num - i)])
-        max = Math.max(max, hLArr[i] + sRArr[num - (num - i)])
+        max = Math.max(max, sLArr[i] + hRArr[num - (num - i - 1)])
+        max = Math.max(max, hLArr[i] + sRArr[num - (num - i - 1)])
     }
 
     println(max)
