@@ -10,7 +10,11 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         while(true){
-            if(n/b == 1 || n/b == 0){
+            if(n/b == 0){
+                sb.append(n%b);
+                break;
+            }
+            if(n/b == 1 ){
                 sb.append(n%b);
                 sb.append(n/b);
                 break;
