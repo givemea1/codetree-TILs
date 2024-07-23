@@ -20,10 +20,12 @@ public class Main {
         int count = 0;
 
         if((input_m1 < input_m2) ||(input_m1==input_m2 && input_d1<input_d2) ){
+
             m1 = input_m1;
             d1 = input_d1;
             m2 = input_m2;
             d2 = input_d2;
+
             while(true){
                 if(m1 == m2 && d1 == d2){
                     break;
@@ -68,6 +70,7 @@ public class Main {
                 if(d1 == days[m1]){
                     m1++;
                     d1 = 1;
+                    continue;
                 }
                 d1++;
             }
