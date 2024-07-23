@@ -47,6 +47,6 @@ public class Main {
             count-=6;
         }
 
-        System.out.println(count / 7 + 1);
+        System.out.println((count+1) / 7 );
     }
 }
