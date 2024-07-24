@@ -7,7 +7,7 @@ public class Main {
         int n = sc.nextInt();
         int k = sc.nextInt();
 
-        int[] arr = new int[n];
+        int[] arr = new int[n+1];
 
         for(int i = 0 ; i < k ; i++){
             int a = sc.nextInt();
