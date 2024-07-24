@@ -7,4 +7,4 @@ elif n==2:
 elif n==3:
     print("Paul")
 else:
-    print("Vancancy")
+    print("Vacancy")
