@@ -1,17 +1,15 @@
 const input = require('fs').readFileSync(0).toString().trim();
 
-let left = [];
-let right = [];
+let leftCount = 0;
+let count = 0;
 
 for (let i = 0; i < input.length - 1; i++) {
     if (input.charAt(i) === "(" && input.charAt(i + 1) === "(") {
-        left.push(i);
+        leftCount++;
     }
     if (input.charAt(i) === ")" && input.charAt(i + 1) === ")") {
-        right.push(i);
+        count += leftCount;
     }
 }
 
-console.log(left.reduce((prev, next) => {
-    return prev + right.filter(i => i > next).length;
-}, 0))
+console.log(count);
