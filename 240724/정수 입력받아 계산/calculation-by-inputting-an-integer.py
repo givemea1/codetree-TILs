@@ -1,3 +1,3 @@
 n=int(input())
 
-print(a*2+3)
+print(n*2+3)
