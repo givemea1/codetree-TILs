@@ -1,4 +1,4 @@
-score = int(input())
+score = float(input())
 
 if score >= 1.0:
     print("High")
