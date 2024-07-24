@@ -17,11 +17,4 @@ for (let section of sections) {
     }
 }
 
-let count = 0;
-let prev = 0;
-for (let c of sectionCount) {
-    if (c === max && prev !== c) count++;
-    prev = c;
-}
-
-console.log(count);
+console.log(max);
