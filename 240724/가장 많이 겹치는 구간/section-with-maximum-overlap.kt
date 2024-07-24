@@ -33,7 +33,7 @@ fun main() {
         if (now > maxCount) {
             count = 1
             maxCount = now
-        } else if (arr[i] != 0 && now == maxCount) {
+        } else if (arr[i] != 0 && now != 1 && now == maxCount) {
             count++
         }
     }
