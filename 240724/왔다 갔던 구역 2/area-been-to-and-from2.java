@@ -16,12 +16,12 @@ public class Main {
         
             if(dir.equals("R")){
                 for(int j = 0; j < cnt; j++){
-                    map[idx++]++;
+                    map[idx]++;
+                    idx++;
                 }
-
             }else{
                 for(int j = 0; j < cnt; j++){
-                    map[idx--]++;
+                    map[--idx]++;
                 }
             }
         }
