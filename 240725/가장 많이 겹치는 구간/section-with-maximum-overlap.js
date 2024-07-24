@@ -1,17 +1,30 @@
-const fs = require('fs');
-const input = fs.readFileSync(0).toString().trim().split("\n");
+const input = require('fs').readFileSync(0).toString().trim().split("\n");
 
 const n = Number(input[0].trim());
 const sections = input.slice(1).map(i => i.trim().split(' ').map(Number));
 
-const nums = sections.flat().sort((a, b) => a - b);
-let sectionCount = Array(n * 2 - 1).fill(0); // sectionCount[i] = 구간 [nums[i], nums[i + 1]] 횟수
-let max = 0;
+// Step 1: Coordinate Compression
+const coords = Array.from(new Set(sections.flat())).sort((a, b) => a - b);
+const coordMap = new Map();
+coords.forEach((val, idx) => coordMap.set(val, idx));
 
-for (let section of sections) {
-    for (let i = nums.indexOf(section[0]); i < nums.indexOf(section[1]); i++) {
-        max = Math.max(max, ++sectionCount[i]);
+// Step 2: Difference Array
+let diff = Array(coords.length).fill(0);
+
+for (let [start, end] of sections) {
+    diff[coordMap.get(start)] += 1;
+    diff[coordMap.get(end)] -= 1;
+}
+
+// Step 3: Compute the prefix sum to find the maximum overlap
+let maxOverlap = 0;
+let currentOverlap = 0;
+
+for (let val of diff) {
+    currentOverlap += val;
+    if (currentOverlap > maxOverlap) {
+        maxOverlap = currentOverlap;
     }
 }
 
-console.log(max);
+console.log(maxOverlap);
