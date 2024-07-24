@@ -4,6 +4,6 @@ n1 = int(arr[0])
 n2 = int(arr[1])
 
 if n1 > n2 :
-    print(a*b)
+    print(n1*n2)
 else:
-    print(b//a)
+    print(n2//n1)
