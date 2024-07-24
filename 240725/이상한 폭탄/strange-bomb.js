@@ -7,10 +7,8 @@ let map = new Map();
 let max = 0;
 
 for (let i = 0; i < n; i++) {
-    if (!map.has(bombs[i])) map.set(bombs[i], i + k);
-    else {
-        if (i <= map.get(bombs[i])) max = Math.max(max, bombs[i]);
-    }
+    if (i <= map.get(bombs[i])) max = Math.max(max, bombs[i]);
+    map.set(bombs[i], i + k);
 }
 
 console.log(max);
