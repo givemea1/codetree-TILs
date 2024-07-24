@@ -1,7 +1,7 @@
 a=3
 b=5
 tmp=a
-b=a
-a=tmp
+a=b
+b=tmp
 print(a)
 print(b)
