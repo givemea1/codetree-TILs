@@ -1,12 +1,5 @@
-a=5
-b=6
-c=7
-tmp1=a
-tmp2=b
-tmp3=c
-b=a
-c=tmp2
-a=tmp3
+a,b,c=5,6,7
+a,b,c=c,a,b
 print(a)
 print(b)
 print(c)
