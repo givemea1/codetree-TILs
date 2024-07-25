@@ -1,4 +1,5 @@
 import java.io.*
+import kotlin.math.*
 
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
@@ -8,7 +9,7 @@ fun main() {
             .toInt()
     var min = Int.MAX_VALUE
     var max = Int.MIN_VALUE
-    var arr = IntArray(200000)
+    var arr = IntArray(10.0.pow(9).toInt())
     for (i in 0 until nums) {
         val n =
             br
