@@ -5,19 +5,22 @@ fun main() {
     val arr =
         br
             .readLine()
-            .trim()
             .split("")
+            .filter { !it.equals("") }
             .toTypedArray()
-    var lCount = 0
-    var rCount = 0
-    for (i in arr.indices - 1) {
-        if (arr[i] == "(" && arr[i + 1] == "(")
-            {
-                lCount++
-            } else if (arr[i] == ")" && arr[i + 1] == ")")
-            {
-                rCount++
-            }
+    var r = IntArray(100000)
+    for (i in arr.size - 2 downTo 0) {
+        if (arr[i] == ")" && arr[i + 1] == ")") {
+            r[i] = r[i + 1] + 1
+        } else {
+            r[i] = r[i + 1]
+        }
     }
-    println(lCount * rCount)
+    var result = 0L
+    for (i in 0 until arr.size - 2) {
+        if (arr[i] == "(" && arr[i + 1] == "(") {
+            result += r[i + 2]
+        }
+    }
+    println(result)
 }
