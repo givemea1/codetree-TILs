@@ -23,6 +23,8 @@ const search = (n, s, nums) => {
             l++;
             sum -= nums[l];
         }
+        l--;
+        sum += nums[l];
         
         min = r - l + 1;
         r++;
