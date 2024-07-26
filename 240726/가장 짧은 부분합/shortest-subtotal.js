@@ -11,6 +11,7 @@ for (let i = 0; i < n; i++) {
         sum += nums[j];
         if (sum >= s) {
             min = Math.min(min, j - i + 1);
+            break;
         }
     }
 }
