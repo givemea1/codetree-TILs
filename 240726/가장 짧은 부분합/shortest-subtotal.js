@@ -7,8 +7,8 @@ let min = n;
 
 for (let i = 0; i < n; i++) {
     let sum = 0;
-    for (let j = i; j < n; j++) {
-        if (j - i + 1 > min) break;
+    let limit = i + min > n ? n : i + min
+    for (let j = i; j < limit; j++) {
         sum += nums[j];
         if (sum >= s) {
             min = Math.min(min, j - i + 1);
