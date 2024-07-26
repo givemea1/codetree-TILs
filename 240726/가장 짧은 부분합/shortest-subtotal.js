@@ -13,20 +13,21 @@ const search = (n, s, nums) => {
     let r = 0;
     for (let i = 0; i < n; i++) {
         sum += nums[i];
-        if (sum >= s) r = i;
+        if (sum >= s) {
+            r = i;
+            break;
+        }
     }
 
     let min = r - l + 1;
 
     while (r < n) {
-        while (sum >= s) {
-            l++;
+        while (sum - nums[l] >= s) {
             sum -= nums[l];
+            l++;
         }
-        l--;
-        sum += nums[l];
-        
-        min = r - l + 1;
+        min = Math.min(min, r - l + 1);
+
         r++;
         sum += nums[r];
     }
