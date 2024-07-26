@@ -19,7 +19,8 @@ const search = (n, s, nums) => {
         }
     }
 
-    let min = r - l + 1;
+    if (sum < s) return -1;
+    min = r - l + 1;
 
     while (r < n) {
         while (sum - nums[l] >= s) {
