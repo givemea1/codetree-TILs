@@ -7,7 +7,7 @@ let min = n;
 
 for (let i = 0; i < n; i++) {
     let sum = 0;
-    for (let j = i; j < n; j++) {
+    for (let j = i; j < i + min; j++) {
         sum += nums[j];
         if (sum >= s) {
             min = Math.min(min, j - i + 1);
