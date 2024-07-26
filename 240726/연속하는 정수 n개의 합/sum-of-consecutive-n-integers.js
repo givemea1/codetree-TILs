@@ -20,7 +20,7 @@ const search = (n, m, nums) => {
         }
     }
 
-    if (sum < m) return -1;
+    if (sum < m) return 0;
 
     while (r < n) {
         while (sum - nums[l] >= m) {
