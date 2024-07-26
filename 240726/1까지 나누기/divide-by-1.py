@@ -1,10 +1,9 @@
 n = int(input())
 
-count =0
+count =1
 while True:
-    count+=1
     n = n//count
     if n <1:
         break
-    
+    count+=1
 print(count)
