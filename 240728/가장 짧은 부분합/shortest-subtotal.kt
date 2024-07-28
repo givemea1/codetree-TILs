@@ -38,5 +38,5 @@ fun main() {
             count++
         }
     }
-    println(if (min == Int.MAX_VALUE) 0 else min)
+    println(if (min == Int.MAX_VALUE) -1 else min)
 }
