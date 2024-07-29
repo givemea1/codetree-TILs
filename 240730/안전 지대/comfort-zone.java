@@ -25,7 +25,7 @@ public class Main {
             }
         }
 
-        int k = -1;    // 안전영역의 수가 최대가 되는 k
+        int k = 1;    // 안전영역의 수가 최대가 되는 k
         int max = 0;    // 안전영역 최대 수
         
         for(int i = 1; i<=100; i++){
