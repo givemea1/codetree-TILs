@@ -31,7 +31,7 @@ public class Main {
                 if(visit[i][j] == 0){
                     blockSize = 0;
                     dfs(i,j,graph[i][j]);
-                    if(blockSize > 0){
+                    if(blockSize > 0 && blockSize > 4){
                         blockCnt++;
                     }
                     if(blockSize > max){
