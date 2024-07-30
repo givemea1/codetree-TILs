@@ -14,13 +14,13 @@ public class Main {
         System.out.println(cnt);
     }
 
-    public static boolean validate(String s){
-        for(int i = 0; i < n ; i+=Integer.parseInt(String.valueOf(s.charAt(i)))){
-            if(i+Integer.parseInt(String.valueOf(s.charAt(i)))-1 >= n){
+    public static boolean validate(){
+        for(int i = 0; i < n ; i+=arr.get(i)){
+            if(i+arr.get(i)-1 >= n){
                 return false;
             }
-            for(int j = i; j<i+Integer.parseInt(String.valueOf(s.charAt(i))); j++){
-                if(Integer.parseInt(String.valueOf(s.charAt(j))) != Integer.parseInt(String.valueOf(s.charAt(i)))){
+            for(int j = i; j<i+arr.get(i); j++){
+                if(arr.get(i) != arr.get(j)){
                     return false;
                 }
             }
@@ -30,11 +30,7 @@ public class Main {
 
     public static void recursive(int num){
         if(num == n+1){
-            StringBuilder sb = new StringBuilder();
-            for(int i = 0;i<arr.size(); i++){
-                sb.append(arr.get(i));
-            }
-            if(validate(sb.toString())){
+            if(validate()){
                 cnt++;
             }
             return;
