@@ -40,7 +40,7 @@ public class Main {
             return;
         }
 
-        for(int i = 1; i<=n;i++){
+        for(int i = 1; i<=4;i++){
             arr.add(i);
             recursive(num+1);
             arr.remove(arr.size()-1);
