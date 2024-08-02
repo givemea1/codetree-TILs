@@ -43,7 +43,8 @@ public class Main {
             for(int j = i+1; j<selected.size(); j++){
                 int[] select1 =selected.get(i);
                 int[] select2 = selected.get(j);
-                if(select1[1] > select2[0] || select1[1] > select2[1]){
+                if((select1[0] < select2[0] && select1[1] > select2[0]) || 
+                (select2[0] < select1[0] && select2[1] > select1[1])){
                     return false;
                 }
             }
