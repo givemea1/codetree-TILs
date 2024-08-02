@@ -8,22 +8,20 @@ const main = () => {
 
     let l = 1;
     let r = input * 2;
+    let answer = r;
 
     while (l <= r) {
         let mid = Math.floor((l + r) / 2);
-        if (mid % 3 === 0 || mid % 5 === 0) mid++;
 
-        if (getOrder(mid) === input) {
-            l = mid;
-            break;
-        } else if (getOrder(mid) > input) {
+        if (getOrder(mid) >= input) {
+            answer = Math.min(answer, mid);
             r = mid - 1;
         } else {
             l = mid + 1;
         }
     }
 
-    console.log(l);
+    console.log(answer);
 }
 
 main();
