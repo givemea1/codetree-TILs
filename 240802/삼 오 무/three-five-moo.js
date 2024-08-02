@@ -2,7 +2,6 @@ const main = () => {
     const input = Number(require('fs').readFileSync(0).toString().trim());
 
     const getOrder = (val) => {
-        if (val % 3 === 0 || val % 5 === 0) return null;
         return val - Math.floor(val / 3) - Math.floor(val / 5) + Math.floor(val / 15);
     }
 
