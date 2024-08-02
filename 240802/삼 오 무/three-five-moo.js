@@ -10,10 +10,11 @@ const main = () => {
     let r = input * 2;
 
     while (l <= r) {
-        const mid = Math.floor((l + r) / 2);
+        let mid = Math.floor((l + r) / 2);
+        if (mid % 3 === 0 || mid % 5 === 0) mid++;
 
         if (getOrder(mid) === input) {
-            console.log(mid);
+            l = mid;
             break;
         } else if (getOrder(mid) > input) {
             r = mid - 1;
@@ -21,6 +22,8 @@ const main = () => {
             l = mid + 1;
         }
     }
+
+    console.log(l);
 }
 
 main();
