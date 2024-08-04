@@ -9,7 +9,7 @@ fun main() {
     var result = -1L
     while (left < right) {
         val mid = (right + left) / 2
-        if ((mid * (mid - 1)) / 2 < num) {
+        if ((mid * (mid + 1)) / 2 <= num) {
             left = mid + 1
             result = mid
         } else {
